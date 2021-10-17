@@ -43,5 +43,18 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    babel: {
+      // envName: server, client, modern
+      presets({ envName }) {
+        return [
+          [
+            '@nuxt/babel-preset-app',
+            {
+              corejs: { version: 3 }
+            }
+          ]
+        ]
+      }
+    }
   }
 }
